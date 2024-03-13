@@ -6,7 +6,7 @@
 /*   By: felperei <felperei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 15:52:42 by feliperei         #+#    #+#             */
-/*   Updated: 2024/03/12 14:36:15 by felperei         ###   ########.fr       */
+/*   Updated: 2024/03/13 14:04:55 by felperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ int	exit_game(t_game *game)
 	mlx_destroy_image(game->mlx, game->player->img_player);
 	mlx_destroy_image(game->mlx, game->img_colect);
 	mlx_destroy_image(game->mlx, game->img_exit);
+	mlx_destroy_image(game->mlx, game->img_enemy);
 	mlx_destroy_window(game->mlx, game->win);
 	mlx_destroy_display(game->mlx);
 	free(game->mlx);
+	free(game->player);
 	exit(0);
 	return (0);
 }
